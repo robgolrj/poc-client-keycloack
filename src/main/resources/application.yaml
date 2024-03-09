@@ -1,0 +1,27 @@
+
+server:
+  port : 8082
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: poc-client
+            client-secret: 3TXHxyPAIdmxvknMvBY1vpijvlefPxlh
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/realm_poc
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/realm_poc
+
+logging:
+  level:
+    root: INFO
+    com:
+      example:
+          pocclientkeycloak: ERROR
+
